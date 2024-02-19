@@ -5,7 +5,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     env:
-      BIT_CLOUD_ACCESS_TOKEN: ${{ secrets.BIT_CLOUD_ACCESS_TOKEN }}
+      BIT_CONFIG_ACCESS_TOKEN: ${{ secrets.BIT_CONFIG_ACCESS_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
