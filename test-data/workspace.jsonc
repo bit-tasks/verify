@@ -87,5 +87,8 @@
       // "teambit.react/react": { }
     }
   },
-  "org.scope-name/hello-world-app": {}
+  "org.scope-name/hello-world-app": {},
+  "teambit.harmony/bit": {
+    "engine": "1.11.43"
+  }
 }
