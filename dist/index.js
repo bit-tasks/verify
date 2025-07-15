@@ -6699,7 +6699,7 @@ const run = (wsdir) => __awaiter(void 0, void 0, void 0, function* () {
     const version = yield (0, exec_1.getExecOutput)("bit -v", [], { cwd: wsdir });
     // If the version is lower than 1.11.43, throw an error recommending to downgrade the action version to v1
     // or upgrade Bit to ^1.11.43
-    if (semver_1.default.lt(version.stdout, "1.11.43")) {
+    if (semver_1.default.lt(version.stdout.trim(), "1.11.43")) {
         throw new Error("Bit version is lower than 1.11.43. Please downgrade the action version to v1, or upgrade Bit to ^1.11.43");
     }
     yield (0, exec_1.exec)("bit ci verify", [], { cwd: wsdir });

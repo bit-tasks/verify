@@ -6,7 +6,7 @@ const run = async (wsdir: string) => {
 
   // If the version is lower than 1.11.43, throw an error recommending to downgrade the action version to v1
   // or upgrade Bit to ^1.11.43
-  if (semver.lt(version.stdout, "1.11.43")) {
+  if (semver.lt(version.stdout.trim(), "1.11.43")) {
     throw new Error(
       "Bit version is lower than 1.11.43. Please downgrade the action version to v1, or upgrade Bit to ^1.11.43"
     );
