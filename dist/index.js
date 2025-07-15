@@ -3997,9 +3997,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const exec_1 = __nccwpck_require__(514);
 const run = (skipBuild, wsdir) => __awaiter(void 0, void 0, void 0, function* () {
-    yield (0, exec_1.exec)("bit status --strict", [], { cwd: wsdir });
-    if (!skipBuild) {
-        yield (0, exec_1.exec)("bit build", [], { cwd: wsdir });
+    if (skipBuild) {
+        yield (0, exec_1.exec)("bit ci verify", [], { cwd: wsdir });
+    }
+    else {
+        yield (0, exec_1.exec)("bit ci verify --build", [], { cwd: wsdir });
     }
 });
 exports["default"] = run;
