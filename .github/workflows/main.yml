@@ -14,4 +14,4 @@ jobs:
         with:
             ws-dir: 'test-data'
       - name: Bit Verify
-        uses: bit-tasks/verify@main
+        uses: bit-tasks/verify@use-ci-scripts

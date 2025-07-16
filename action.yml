@@ -7,9 +7,6 @@ inputs:
   ws-dir:
     description: "Workspace json file directory path"
     required: false
-  skip-build:
-    description: "Skip running 'bit build'"
-    required: false
 runs:
   using: 'node20'
   main: 'dist/index.js'
