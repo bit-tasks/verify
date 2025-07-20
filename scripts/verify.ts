@@ -12,7 +12,13 @@ const run = async (wsdir: string) => {
     );
   }
 
-  await exec("bit ci verify", [], { cwd: wsdir });
+  await exec("bit ci verify", [], {
+    cwd: wsdir,
+    env: {
+      ...process.env,
+      BIT_DISABLE_SPINNER: "false",
+    },
+  });
 };
 
 export default run;

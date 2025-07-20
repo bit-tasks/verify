@@ -6702,7 +6702,10 @@ const run = (wsdir) => __awaiter(void 0, void 0, void 0, function* () {
     if (semver_1.default.lt(version.stdout.trim(), "1.11.42")) {
         throw new Error("Bit version is lower than 1.11.42. Please downgrade the action version to v1, or upgrade Bit to ^1.11.42");
     }
-    yield (0, exec_1.exec)("bit ci verify", [], { cwd: wsdir });
+    yield (0, exec_1.exec)("bit ci verify", [], {
+        cwd: wsdir,
+        env: Object.assign(Object.assign({}, process.env), { BIT_DISABLE_SPINNER: "false" }),
+    });
 });
 exports["default"] = run;
 
