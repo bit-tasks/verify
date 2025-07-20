@@ -3,7 +3,9 @@ Check Bit components for issues in a Bit workspace.
 
 # GitHub Actions
 
-This task executes `bit status --strict && bit build` inside the workspace directory.
+This task executes `bit ci verify` inside the workspace directory.
+
+**Note:** `bit-tasks/verify@v2` requires Bit `^1.11.42`, if you need a lower version, use `bit-tasks/verify@v1`
 
 ## Inputs
 
@@ -11,13 +13,9 @@ This task executes `bit status --strict && bit build` inside the workspace direc
 
 **Optional** The workspace directory path from the root. Default `"Dir specified in Init Task or ./"`.
 
-### `skip-build`
-
-**Optional** Skip running `bit build` in the action.
-
 ## Example usage
 
-**Note:** Use `bit-task/init@v1` as a prior step in your action before running `bit-tasks/verify@v1`.
+**Note:** Use `bit-task/init@v1` as a prior step in your action before running `bit-tasks/verify@v2`.
 
 ```yaml
 name: Test Bit Verify
@@ -39,7 +37,7 @@ jobs:
         with:
           ws-dir: '<WORKSPACE_DIR_PATH>'
       - name: Bit Verify
-        uses: bit-tasks/verify@v1
+        uses: bit-tasks/verify@v2
 ```
 
 # Contributor Guide
