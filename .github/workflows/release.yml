@@ -67,6 +67,21 @@ jobs:
       - name: Build action
         run: pnpm run build
 
+      - name: Commit built files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Force add the built dist/ folder to git (override .gitignore)
+          git add -f dist/
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Build dist for release v${{ steps.semver.outputs.full }}"
+          fi
+
       - name: Create release archive
         run: |
           mkdir -p release-assets
@@ -92,6 +107,14 @@ jobs:
               git push --delete origin "$tag" || true
             fi
           done
+
+      - name: Push built files to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Push the commit with built files to main branch
+          git push origin HEAD:main
 
       - name: Create/Update major version tag
         run: |
