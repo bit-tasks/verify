@@ -1,11 +1,12 @@
 {
-  "name": "github-action",
-  "version": "1.0.0",
+  "name": "@bit-tasks/verify",
+  "version": "2.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build index.ts --license licenses.txt",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "pnpm run build"
   },
   "keywords": [],
   "author": "",
