@@ -113,7 +113,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Push the commit with built files to main branch
+          # Pull latest changes and push the commit with built files to main branch
+          git pull origin main --rebase
           git push origin HEAD:main
 
       - name: Create/Update major version tag
