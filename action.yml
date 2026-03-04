@@ -7,6 +7,10 @@ inputs:
   ws-dir:
     description: "Workspace json file directory path"
     required: false
+  upload-bit-log:
+    description: "Upload Bit debug log as a GitHub Actions artifact"
+    required: false
+    default: 'false'
 runs:
   using: 'node20'
   main: 'dist/index.js'
