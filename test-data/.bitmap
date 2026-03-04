@@ -17,10 +17,10 @@
         "mainFile": "index.ts",
         "rootDir": "scope/get-message",
         "config": {
-            "bitdev.react/react-env@4.1.9": {},
             "teambit.envs/envs": {
                 "env": "bitdev.react/react-env"
-            }
+            },
+            "bitdev.react/react-env@5.0.3": {}
         }
     },
     "my-app": {
@@ -31,10 +31,10 @@
         "mainFile": "index.ts",
         "rootDir": "scope/my-app",
         "config": {
-            "bitdev.react/react-env@4.1.9": {},
             "teambit.envs/envs": {
                 "env": "bitdev.react/react-env"
-            }
+            },
+            "bitdev.react/react-env@5.0.3": {}
         }
     },
     "my-env": {
@@ -45,10 +45,10 @@
         "mainFile": "index.ts",
         "rootDir": "scope/my-env",
         "config": {
-            "bitdev.general/envs/bit-env@3.0.4": {},
             "teambit.envs/envs": {
                 "env": "bitdev.general/envs/bit-env"
-            }
+            },
+            "bitdev.general/envs/bit-env@4.0.1": {}
         }
     },
     "$schema-version": "17.0.0"
