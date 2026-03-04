@@ -71,3 +71,4 @@ jobs:
         uses: ./
         with:
           ws-dir: 'test-data'
+          upload-bit-log: true
